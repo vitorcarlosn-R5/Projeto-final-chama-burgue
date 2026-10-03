@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chama Burger — Burger na brasa, do jeito certo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--CORS = Cross-Origin Resource Sharing ("compartilhamento de recursos entre origens diferentes"). Se qualquer um desses três for diferente, já é uma "origem diferente".
+
+  Como o CORS libera isso:
+
+  O servidor que tem o recurso (a fonte, a API, etc.) pode responder com um cabeçalho HTTP dizendo "pode, esse outro domínio tem permissão":-->
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome: biblioteca de ícones prontos, usados como <i class="fa-..."></i> -->
+  <!--Site oficial : https://fontawesome.com/
+   (aba "Icons") e ver o nome exato da classe (ex: fa-brands fa-whatsapp) pra usar no HTML.-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecalho-site">
+    <nav class="barra-navegacao">
+      <a href="#" class="logo">🔥 CHAMA BURGER</a>
+      <ul class="links-menu" id="linksMenu">
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#reserva">Reservar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#pedir" class="botao botao-nav">Peça agora</a>
+      <button class="menu-alternar" id="menuAlternar" aria-label="Abrir menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- DESTAQUE (hero) -->
+    <section class="destaque">
+      <div class="destaque-conteudo">
+        <div class="destaque-texto">
+          <h1>Burger de verdade,<br>na brasa.</h1>
+          <p>Pão brioche, carne 160g grelhada na hora e ingredientes fresquinhos — sem atalho, sem enrolação.</p>
+          <a href="#cardapio" class="botao botao-primario">Ver cardápio</a>
+        </div>
+        <div class="destaque-imagem">
+          <img src="assets/icons/burger-classico.svg" alt="Ilustração de um hambúrguer clássico">
+        </div>
+      </div>
+
+    </section>
+
+    <section class="cardapio" id="cardapio">
+      <h2>Nosso cardápio</h2>
+      <div class="cardapio-cartoes">
+        <article class="cardapio-cartao">
+          <div class="cardapio-icone">
+            <img src="assets/icons/burger-classico.svg" alt="Ilustração do burger Clássico">
+          </div>
+          <h3>Clássico</h3>
+          <p>Pão brioche, carne 160g, queijo, alface e tomate.</p>
+          <span class="preco">R$ 24,90</span>
+          <button class="adicionar-carrinho" data-name="Clássico" data-price="24.90">Adicionar ao pedido</button>
+        </article>
+        <article class="cardapio-cartao">
+          <span class="selo">Mais pedido</span> 
+          <div class="cardapio-icone">
+            <img src="assets/icons/burger-bacon.svg" alt="Ilustração do burger Bacon">
+          </div>
+          <h3>Bacon</h3>
+          <p>Tudo do clássico + fatias generosas de bacon crocante.</p>
+          <span class="preco">R$ 28,90</span>
+          <button class="adicionar-carrinho" data-name="Bacon" data-price="28.90">Adicionar ao pedido</button>
+        </article>
+        <article class="cardapio-cartao">
+          <div class="cardapio-icone">
+            <img src="assets/icons/burger-veggie.svg" alt="Ilustração do burger Veggie">
+          </div>
+          <h3>Veggie</h3>
+          <p>Hambúrguer de grão-de-bico, queijo, alface e cebola roxa.</p>
+          <span class="preco">R$ 26,90</span>
+          <button class="adicionar-carrinho" data-name="Veggie" data-price="26.90">Adicionar ao pedido</button>
+        </article>
+        <article class="cardapio-cartao">
+          <div class="cardapio-icone cardapio-icone-combo">
+            <img src="assets/icons/fritas.svg" alt="Porção de fritas">
+            <img src="assets/icons/bebida.svg" alt="Refrigerante gelado">
+          </div>
+          <h3>Combo Fritas + Refri</h3>
+          <p>Fritas crocantes e um refrigerante gelado pra completar.</p>
+          <span class="preco">R$ 12,90</span>
+          <button class="adicionar-carrinho" data-name="Combo Fritas + Refri" data-price="12.90">Adicionar ao pedido</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+      <div class="sobre-imagem">
+        <img src="assets/images/sobre-burger.jpg" alt="Cozinha do Chama Burger" width="800" height="500">
+      </div>
+      <div class="sobre-texto">
+        <span class="rotulo-secao">Nossa história</span>
+        <h2>Comida de boteco, com capricho de restaurante</h2>
+        <p>O Chama Burger começou numa churrasqueira de quintal, testando receitas com os
+          amigos. Hoje, o método continua o mesmo: carne grelhada na brasa, pão fresco
+          do dia e ingredientes comprados na feira — só que agora pra atender o bairro
+          inteiro.</p>
+        <a href="#cardapio" class="link-seta">Ver cardápio completo →</a>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos" id="depoimentos">
+      <h2>Quem prova, volta</h2>
+      <div class="depoimentos-cartoes">
+        <article class="depoimento">
+          <img src="assets/images/avatar-pc.png" alt="Foto de Pedro Costa" class="avatar">
+          <p class="citacao">"Melhor bacon burger da região, sem exagero. O ponto da carne é sempre perfeito."</p>
+          <p class="autor">Pedro Costa <span>— cliente frequente</span></p>
+        </article>
+        <article class="depoimento">
+          <img src="assets/images/avatar-mr.png" alt="Foto de Marina Rocha" class="avatar">
+          <p class="citacao">"O veggie surpreende até quem come carne. Peço toda semana com a galera do trabalho."</p>
+          <p class="autor">Marina Rocha <span>— cliente frequente</span></p>
+        </article>
+        <article class="depoimento">
+          <img src="assets/images/avatar-tl.png" alt="Foto de Thiago Lima" class="avatar">
+          <p class="citacao">"Pedi pro aniversário de 20 pessoas e todo mundo elogiou. Entrega rápida também."</p>
+          <p class="autor">Thiago Lima <span>— cliente de evento</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reserva" id="reserva">
+      <h2>Reserve sua mesa</h2>
+      <p>Prefere comer no salão? Deixe seus dados que confirmamos por telefone.</p>
+      <form class="formulario-reserva" id="formularioReserva">
+        <div class="linha-formulario">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+        <div class="linha-formulario">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+        </div>
+        <div class="linha-formulario">
+          <label for="data">Data</label>
+          <input type="date" id="data" name="data" required>
+        </div>
+        <div class="linha-formulario">
+          <label for="pessoas">Número de pessoas</label>
+          <select id="pessoas" name="pessoas">
+            <option value="1">1 pessoa</option> 
+            <option value="3">3 pessoas</option>
+            <option value="4">4 pessoas</option>
+            <option value="5+">5 ou mais</option>
+          </select>
+        </div>
+        <div class="linha-formulario linha-formulario-completa">
+          <label for="mensagem">Observações (opcional)</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Alguma preferência ou restrição alimentar?"></textarea>
+        </div>
+        <div class="linha-formulario linha-formulario-completa">
+          <label for="foto">Foto de referência (opcional)</label>
+          <input type="file" id="foto" name="foto" accept="image/*"> 
+
+          <img id="previaFoto" class="previa-foto" alt="Prévia da imagem selecionada" hidden>
+        </div>
+        <button type="submit" class="botao botao-primario formulario-enviar">Confirmar reserva</button>
+      </form>
+      
+      <div class="confirmacao-reserva" id="confirmacaoReserva"></div>
+    </section>
+
+    
+    <section class="chamada-acao" id="pedir"> 
+      <h2>Bateu a fome?</h2>
+      <p>Peça pelo delivery ou venha comer no salão — abrimos todos os dias, das 18h à meia-noite.</p>
+      <a href="#" class="botao botao-realce">Peça pelo WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="rodape-site" id="contato">
+    <div class="rodape-info">
+      <p>&copy; 2026 Chama Burger — Av Santa catarina, 123, Jabaguara</p>
+      <p class="rodape-horario">Todos os dias, das 18h à meia-noite</p>
+    </div>
+  
+    <ul class="rodape-links"> 
+      <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a></li>
+      <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a></li>
+      <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a></li>
+      <li><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a></li>
+      <li><a href="#" aria-label="Ver no mapa"><i class="fa-solid fa-location-dot"></i><span>Ver no mapa</span></a></li>
+    </ul>
+  </footer>
+
+
+  <div class="resumo-carrinho" id="resumoCarrinho">
+    <span class="carrinho-icone">🛒</span>
+    <span id="carrinhoQuantidade">0</span> itens · <span id="carrinhoTotal">R$ 0,00</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
